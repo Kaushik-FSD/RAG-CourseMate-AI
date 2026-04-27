@@ -1,2 +1,11 @@
 from dotenv import load_dotenv
+from langchain_mistralai import ChatMistralAI
 load_dotenv()
+
+model = ChatMistralAI(
+    model="mistral-small-2603"
+)
+
+response = model.invoke("hello, how re you?")
+
+print(f"Response from Mistal:: {response.content}")
