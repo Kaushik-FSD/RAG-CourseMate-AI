@@ -8,6 +8,7 @@ load_dotenv()
 data_text = TextLoader("document_loaders/notes.txt")  
 docs_text = data_text.load()
 
+#loading data from pdf
 data_pdf = PyPDFLoader("document_loaders/GRU.pdf")
 docs_pdf = data_pdf.load()
 
@@ -30,7 +31,7 @@ model = ChatMistralAI(
 
 # For pdf file
 prompt = template.format_messages(data = docs_pdf)
-# The above can break because of context window
+# The above can break because of context window, we have to use chunking 
 
 response = model.invoke(prompt)
 
