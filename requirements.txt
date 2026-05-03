@@ -9,10 +9,14 @@ langchain-core
 langchain-openai
 langchain-mistralai
 langchain-text-splitters
+langchain_huggingface
 
 chromadb
 
-sentence-transformers
+# Keep these compatible with each other (avoids cached_download import errors)
+sentence-transformers>=5.4.1
+transformers>=5.7.0
+huggingface-hub>=1.13.0
 
 tiktoken
 numpy
