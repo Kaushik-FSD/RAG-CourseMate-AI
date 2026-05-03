@@ -41,6 +41,11 @@ for result in results:
     print(result.page_content)
     print(result.metadata)
 
+# This will return the retriver object
+# Retriver is a class that will help us to retrieve the documents from the vector store
+# but we can also use vectorstore.similarity_search() to get the most similar documents
+# but the retriver object will help us to retrieve the documents from the vector store in a more efficient way
+# also we can use the retriver object to chain with the llm -> which cant be done with the vectorstore.similarity_search()
 retriver = vectorstore.as_retriever()
 
 docs = retriver.invoke("Explain deep learning")
